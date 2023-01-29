@@ -1,0 +1,8 @@
+import Cart from "../ts/cart";
+
+test('new card should be empty', () => {
+  const cart = new Cart();
+  cart.add({id: 1, name: '1984', price: 500});
+  cart.add({id: 1, name: 'Fahrenheit 451', price: 400});
+  expect(cart.items.length).toBe(2);
+});
