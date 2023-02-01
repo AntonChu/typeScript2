@@ -8,13 +8,11 @@ export default class Cart {
   }
 
   getWholePrice(): number {
-    const pricesArr: any = [];
-    [...this.items].forEach(el => pricesArr.push(el.price));
-    return pricesArr.reduce((acc: number, item: number) => acc + item, 0);
+    return this.items. reduce ((acc: number, item: Buyable) => acc + item.price, 0);
   }
 
   getDiscountPrice(discount: number): number {
-    const sum: number = this.getWholePrice();
+    const sum = this.getWholePrice();
     return sum - sum * (discount / 100);
   }
 }
